@@ -1,2 +1,5 @@
-E:\_PROJECTS_JAVA_\JScriptReader\Program.java
-E:\_PROJECTS_JAVA_\JScriptReader\UI\FormMain.java
+E:\AVG\jscriptreader\Program.java
+E:\AVG\jscriptreader\UI\FormMain.java
+E:\AVG\jscriptreader\UI\LeftPanel.java
+E:\AVG\jscriptreader\UI\MyMenu.java
+E:\AVG\jscriptreader\UI\RightPanel.java

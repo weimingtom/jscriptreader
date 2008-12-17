@@ -41,6 +41,10 @@
 				<folder>UI</folder>
 			</fileitem>
 			<fileitem>
+				<path>UI\InfoPanel.java</path>
+				<folder>UI</folder>
+			</fileitem>
+			<fileitem>
 				<path>UI\MyMenu.java</path>
 				<folder>UI</folder>
 			</fileitem>

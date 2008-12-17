@@ -17,15 +17,12 @@ package UI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.tree.*;
 import javax.swing.event.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
+
+
 
 
 public class FormMain extends JFrame
@@ -34,6 +31,7 @@ public class FormMain extends JFrame
 	MyMenu myMenu;// 我的菜单栏
 	GraphPanel graphPanel;// 左侧面板
 	ScriptPanel scriptPanel;// 右侧面板
+	InfoPanel infoPanel;// 中间面板
     
 	public FormMain()
 	{
@@ -43,13 +41,15 @@ public class FormMain extends JFrame
 		myMenu = new MyMenu();
 		graphPanel = new GraphPanel();
 		scriptPanel = new ScriptPanel();
+		infoPanel = new InfoPanel();
 		
 		// 设置主框架的布局
 		Container c = this.getContentPane();
-		c.setLayout(new GridLayout(1,2));
+		c.setLayout(new GridLayout(1,3));
 		this.setJMenuBar(myMenu);
 
 		c.add(graphPanel);
+		c.add(infoPanel);
 		c.add(scriptPanel);
 
 		setSize(700,500);

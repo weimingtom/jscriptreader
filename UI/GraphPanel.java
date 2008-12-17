@@ -8,50 +8,59 @@
  *
  * 图形显示模块 
  * 利用paintComponent事件中的Graphic类绘制图形
- *
- *
+ * 
+ * 备注：不能画bmp
  */
  
 package UI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.*;
 import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.io.*;
 import javax.swing.tree.*;
 import javax.swing.event.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
 
 
+
 class GraphPanel extends JPanel
 {
 	// 1、声明事件、控件
 	//ActionListener LeftPanelActions;
-	Image image;
-	ImageIcon icon;
+	
+	ImageIcon iconBg;
+	ImageIcon iconCt;
+	ImageIcon iconFm;
+	Image imageBg;
+	Image imageCt;
+	Image imageFm;
 	
 	// 公有属性
-	public String ResPath = "I:\\GoogleCode\\jscriptreader\\table.jpg";
+	public String ResPathBg = "I:\\GoogleCode\\jscriptreader\\test.jpg";
+	public String ResPathCt = "I:\\GoogleCode\\jscriptreader\\test.png";
+	public String ResPathFm = "I:\\GoogleCode\\jscriptreader\\DATA\\IMG\\frame.png";
 	
 	public GraphPanel()
 	{
-		init();
+		initResource();
 	}
 	
-	public void init()
+	public void initResource()
 	{
-        icon = new ImageIcon(ResPath);
+        iconBg = new ImageIcon(ResPathBg);
+        iconCt = new ImageIcon(ResPathCt);
+        iconFm = new ImageIcon(ResPathFm);
 	}
 		
 	public void paintComponent(Graphics g)   
   	{   
-  		image = icon.getImage();
-      	g.drawImage(image, 10, 10, null);   
+  		imageBg = iconBg.getImage();
+  		imageCt = iconCt.getImage();
+  		imageFm = iconFm.getImage();
+      	g.drawImage(imageBg, 0, 0, null);   
+      	g.drawImage(imageCt, 0, 0, null);   
+      	g.drawImage(imageFm, 0, 0, null);   
   	}   
 }

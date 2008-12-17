@@ -1,5 +1,6 @@
 I:\GoogleCode\jscriptreader\Program.java
 I:\GoogleCode\jscriptreader\UI\FormMain.java
 I:\GoogleCode\jscriptreader\UI\GraphPanel.java
+I:\GoogleCode\jscriptreader\UI\InfoPanel.java
 I:\GoogleCode\jscriptreader\UI\MyMenu.java
 I:\GoogleCode\jscriptreader\UI\ScriptPanel.java

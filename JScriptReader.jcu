@@ -24,7 +24,7 @@
 			<path>UI\FormMain.java</path>
 			<source>true</source>
 			<index>1</index>
-			<active>true</active>
+			<active>false</active>
 		</docitem>
 		<docitem>
 			<path>UI\MyMenu.java</path>
@@ -33,16 +33,30 @@
 			<active>false</active>
 		</docitem>
 		<docitem>
-			<path>UI\LeftPanel.java</path>
+			<path>UI\GraphPanel.java</path>
 			<source>true</source>
 			<index>3</index>
-			<active>false</active>
+			<active>true</active>
 		</docitem>
 		<docitem>
-			<path>UI\RightPanel.java</path>
+			<path>UI\ScriptPanel.java</path>
 			<source>true</source>
 			<index>4</index>
 			<active>false</active>
 		</docitem>
 	</open_files>
+	<breakpoints>
+		<breakpoint>
+			<path>UI\FormMain.java</path>
+			<class>UI</class>
+			<session/>
+			<line>43</line>
+			<enable>true</enable>
+		</breakpoint>
+	</breakpoints>
+	<watches>
+		<watch>
+			<expression>imageLabel</expression>
+		</watch>
+	</watches>
 </workspace_user>

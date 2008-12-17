@@ -32,35 +32,26 @@ public class FormMain extends JFrame
 {
 	// 声明控件
 	MyMenu myMenu;// 我的菜单栏
-	LeftPanel leftPanel;// 左侧面板
-	RightPanel rightPanel;// 右侧面板
+	GraphPanel graphPanel;// 左侧面板
+	ScriptPanel scriptPanel;// 右侧面板
     
 	public FormMain()
 	{
+	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		// 初始化所有模块
 		myMenu = new MyMenu();
-		leftPanel = new LeftPanel();
-		rightPanel = new RightPanel();
+		graphPanel = new GraphPanel();
+		scriptPanel = new ScriptPanel();
 		
 		// 设置主框架的布局
 		Container c = this.getContentPane();
 		c.setLayout(new GridLayout(1,2));
 		this.setJMenuBar(myMenu);
 
-		c.add(leftPanel);
-		c.add(rightPanel);
+		c.add(graphPanel);
+		c.add(scriptPanel);
 
-		// 窗口事件
-		this.addWindowListener(new WindowAdapter()
-		{
-			public void WindowClosing(WindowEvent e)
-			{   
-			    // 释放资源，退出程序
-				dispose();
-				System.exit(0);
-			}
-		});
-		
 		setSize(700,500);
 		setTitle("JScriptReader");
 		setLocation(200,150);

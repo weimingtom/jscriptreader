@@ -1,5 +1,5 @@
-E:\AVG\jscriptreader\Program.java
-E:\AVG\jscriptreader\UI\FormMain.java
-E:\AVG\jscriptreader\UI\LeftPanel.java
-E:\AVG\jscriptreader\UI\MyMenu.java
-E:\AVG\jscriptreader\UI\RightPanel.java
+I:\GoogleCode\jscriptreader\Program.java
+I:\GoogleCode\jscriptreader\UI\FormMain.java
+I:\GoogleCode\jscriptreader\UI\GraphPanel.java
+I:\GoogleCode\jscriptreader\UI\MyMenu.java
+I:\GoogleCode\jscriptreader\UI\ScriptPanel.java

@@ -37,7 +37,7 @@
 				<folder>UI</folder>
 			</fileitem>
 			<fileitem>
-				<path>UI\LeftPanel.java</path>
+				<path>UI\GraphPanel.java</path>
 				<folder>UI</folder>
 			</fileitem>
 			<fileitem>
@@ -45,7 +45,7 @@
 				<folder>UI</folder>
 			</fileitem>
 			<fileitem>
-				<path>UI\RightPanel.java</path>
+				<path>UI\ScriptPanel.java</path>
 				<folder>UI</folder>
 			</fileitem>
 		</include>

@@ -1,6 +1,6 @@
-I:\GoogleCode\jscriptreader\Program.java
-I:\GoogleCode\jscriptreader\UI\FormMain.java
-I:\GoogleCode\jscriptreader\UI\GraphPanel.java
-I:\GoogleCode\jscriptreader\UI\InfoPanel.java
-I:\GoogleCode\jscriptreader\UI\MyMenu.java
-I:\GoogleCode\jscriptreader\UI\ScriptPanel.java
+E:\AVG\jscriptreader\Program.java
+E:\AVG\jscriptreader\UI\FormMain.java
+E:\AVG\jscriptreader\UI\GraphPanel.java
+E:\AVG\jscriptreader\UI\InfoPanel.java
+E:\AVG\jscriptreader\UI\MyMenu.java
+E:\AVG\jscriptreader\UI\ScriptPanel.java

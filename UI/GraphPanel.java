@@ -38,9 +38,10 @@ class GraphPanel extends JPanel
 	Image imageFm;
 	
 	// 公有属性
-	public String ResPathBg = "I:\\GoogleCode\\jscriptreader\\test.jpg";
-	public String ResPathCt = "I:\\GoogleCode\\jscriptreader\\test.png";
-	public String ResPathFm = "I:\\GoogleCode\\jscriptreader\\DATA\\IMG\\frame.png";
+	public String CurrentDir = System.getProperty("user.dir",".");
+	public String ResPathBg = CurrentDir + "\\test.jpg";
+	public String ResPathCt = CurrentDir + "\\test.png";
+	public String ResPathFm = CurrentDir + "\\DATA\\IMG\\frame.png";
 	
 	public GraphPanel()
 	{
@@ -59,8 +60,12 @@ class GraphPanel extends JPanel
   		imageBg = iconBg.getImage();
   		imageCt = iconCt.getImage();
   		imageFm = iconFm.getImage();
-      	g.drawImage(imageBg, 0, 0, null);   
-      	g.drawImage(imageCt, 0, 0, null);   
-      	g.drawImage(imageFm, 0, 0, null);   
+      	g.drawImage(imageBg, 0, 0, 480, 360, null);   
+      	g.drawImage(imageCt, 0, 0, 210, 360, null);   
+      	g.drawImage(imageFm, 105, 180, 375, 180, null);
+      	g.setFont(new Font("黑体",Font.PLAIN,16));
+      	g.setColor(Color.black);
+      	g.drawString("试试看能不能打字\n能不能换行", 170, 250);
+      	g.drawString("试试看能不能打字\n能不能换行", 170, 270);
   	}   
 }

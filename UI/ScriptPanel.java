@@ -33,6 +33,9 @@ class ScriptPanel extends JPanel
 	JScrollPane scrollPane;
 	JTextArea scriptText;
 
+	// ¹«ÓÐÊôÐÔ
+	public String CurrentDir = System.getProperty("user.dir",".");
+
 	public ScriptPanel()
 	{
 		//this.setLayout(new GridLayout(1,1));		
@@ -51,7 +54,7 @@ class ScriptPanel extends JPanel
 	{
 		try
 		{
-		    FileReader reader = new FileReader("I:\\GoogleCode\\jscriptreader\\DATA\\AVGS\\story.avgs");
+		    FileReader reader = new FileReader(CurrentDir + "\\DATA\\AVGS\\story.avgs");
 		    BufferedReader br = new BufferedReader(reader);
 		    String s1 = null;
 		    while((s1 = br.readLine()) != null)

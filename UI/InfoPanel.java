@@ -29,9 +29,12 @@ class InfoPanel extends JPanel
 {
 	// 1、声明事件、控件
 	ActionListener RigntPanelActions;
+	
+	JButton jb = new JButton("sdfasdfs");
 
 	public InfoPanel()
 	{
+		add(jb);
 	}
 	
 }

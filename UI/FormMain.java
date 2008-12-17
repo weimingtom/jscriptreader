@@ -29,9 +29,11 @@ public class FormMain extends JFrame
 {
 	// 声明控件
 	MyMenu myMenu;// 我的菜单栏
-	GraphPanel graphPanel;// 左侧面板
-	ScriptPanel scriptPanel;// 右侧面板
-	InfoPanel infoPanel;// 中间面板
+	JPanel leftPanel;// 左侧面板
+	JPanel rightPanel;// 右侧面板
+	GraphPanel graphPanel;// 图形面板
+	ScriptPanel scriptPanel;// 脚本面板
+	InfoPanel infoPanel;// 信息面板
     
 	public FormMain()
 	{
@@ -39,20 +41,26 @@ public class FormMain extends JFrame
 
 		// 初始化所有模块
 		myMenu = new MyMenu();
+		leftPanel = new JPanel();
+		rightPanel = new JPanel();
 		graphPanel = new GraphPanel();
 		scriptPanel = new ScriptPanel();
 		infoPanel = new InfoPanel();
-		
+				
 		// 设置主框架的布局
-		Container c = this.getContentPane();
-		c.setLayout(new GridLayout(1,3));
-		this.setJMenuBar(myMenu);
+		setJMenuBar(myMenu);
+		
+		Container contentPane = this.getContentPane();
+		contentPane.setLayout(new GridLayout(1,2,10,0));
+		contentPane.add(leftPanel);
+		contentPane.add(rightPanel);
+		leftPanel.setLayout(new GridLayout(2,1,0,10));
+		leftPanel.add(graphPanel);
+		leftPanel.add(infoPanel);
+		rightPanel.setLayout(new GridLayout(1,1,0,0));
+		rightPanel.add(scriptPanel);
 
-		c.add(graphPanel);
-		c.add(infoPanel);
-		c.add(scriptPanel);
-
-		setSize(700,500);
+		setSize(960,800);
 		setTitle("JScriptReader");
 		setLocation(200,150);
 		setVisible(true);

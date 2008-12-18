@@ -29,6 +29,12 @@
 			<folderitem>
 				<path>UI</path>
 			</folderitem>
+			<folderitem>
+				<path>Domain</path>
+			</folderitem>
+			<folderitem>
+				<path>Service</path>
+			</folderitem>
 			<fileitem>
 				<path>Program.java</path>
 			</fileitem>
@@ -51,6 +57,38 @@
 			<fileitem>
 				<path>UI\ScriptPanel.java</path>
 				<folder>UI</folder>
+			</fileitem>
+			<fileitem>
+				<path>Domain\Actor.java</path>
+				<folder>Domain</folder>
+			</fileitem>
+			<fileitem>
+				<path>Domain\Face.java</path>
+				<folder>Domain</folder>
+			</fileitem>
+			<fileitem>
+				<path>Domain\Line.java</path>
+				<folder>Domain</folder>
+			</fileitem>
+			<fileitem>
+				<path>Domain\Scene.java</path>
+				<folder>Domain</folder>
+			</fileitem>
+			<fileitem>
+				<path>Domain\Story2.java</path>
+				<folder>Domain</folder>
+			</fileitem>
+			<fileitem>
+				<path>Service\AvgsReader.java</path>
+				<folder>Service</folder>
+			</fileitem>
+			<fileitem>
+				<path>Service\MyEnum.java</path>
+				<folder>Service</folder>
+			</fileitem>
+			<fileitem>
+				<path>Service\StoryReader2.java</path>
+				<folder>Service</folder>
 			</fileitem>
 		</include>
 	</files>

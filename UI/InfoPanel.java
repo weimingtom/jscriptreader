@@ -1,5 +1,5 @@
 /**
- * @(#)ScriptPanel.java
+ * @(#)InfoPanel.java
  *
  *
  * @author Arthur 

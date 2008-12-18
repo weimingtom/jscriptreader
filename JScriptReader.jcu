@@ -11,44 +11,26 @@
 			<folderitem>
 				<path>UI</path>
 			</folderitem>
+			<folderitem>
+				<path>Domain</path>
+			</folderitem>
+			<folderitem>
+				<path>Service</path>
+			</folderitem>
 		</project>
 	</projects>
 	<open_files>
 		<docitem>
-			<path>Program.java</path>
+			<path>Service\MyEnum.java</path>
 			<source>true</source>
 			<index>0</index>
 			<active>false</active>
 		</docitem>
 		<docitem>
-			<path>UI\FormMain.java</path>
+			<path>Service\AvgsReader.java</path>
 			<source>true</source>
 			<index>1</index>
-			<active>false</active>
-		</docitem>
-		<docitem>
-			<path>UI\MyMenu.java</path>
-			<source>true</source>
-			<index>2</index>
-			<active>false</active>
-		</docitem>
-		<docitem>
-			<path>UI\GraphPanel.java</path>
-			<source>true</source>
-			<index>3</index>
 			<active>true</active>
-		</docitem>
-		<docitem>
-			<path>UI\ScriptPanel.java</path>
-			<source>true</source>
-			<index>4</index>
-			<active>false</active>
-		</docitem>
-		<docitem>
-			<path>UI\InfoPanel.java</path>
-			<source>true</source>
-			<index>5</index>
-			<active>false</active>
 		</docitem>
 	</open_files>
 	<breakpoints>

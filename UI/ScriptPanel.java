@@ -47,6 +47,8 @@ class ScriptPanel extends JPanel
 		scriptText = new JTextArea();
 		scrollPane = new JScrollPane(scriptText);
 		scriptText.setLineWrap(true);
+		scriptText.setEditable(false);
+
 		
 		this.add(scrollPane, BorderLayout.CENTER);
 		

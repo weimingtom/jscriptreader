@@ -30,15 +30,13 @@ import javax.swing.table.*;
 
 public class FormMain extends JFrame
 {
-	//ActionListener GloblePanelActions;
-
 	// 声明控件
 	MyMenu myMenu;// 我的菜单栏
-	JPanel leftPanel;// 左侧面板
-	JPanel rightPanel;// 右侧面板
 	GraphPanel graphPanel;// 图形面板
 	ScriptPanel scriptPanel;// 脚本面板
 	InfoPanel infoPanel;// 信息面板
+	
+	JButton btnStart;
 	
 	public FormMain()
 	{
@@ -46,28 +44,29 @@ public class FormMain extends JFrame
 
 		// 初始化所有模块
 		myMenu = new MyMenu();
-		leftPanel = new JPanel();
-		rightPanel = new JPanel();
 		graphPanel = new GraphPanel();
 		scriptPanel = new ScriptPanel();
 		infoPanel = new InfoPanel();
+		btnStart = new JButton("开始执行");
 				
+
 		// 设置主框架的布局
-		setJMenuBar(myMenu);
-		
+		setJMenuBar(myMenu);// 菜单
 		Container contentPane = this.getContentPane();
-		contentPane.setLayout(new GridLayout(1,2,10,0));
-		contentPane.add(leftPanel);
-		contentPane.add(rightPanel);
-		leftPanel.setLayout(new GridLayout(2,1,0,10));
-		leftPanel.add(graphPanel);
-		leftPanel.add(infoPanel);
-		rightPanel.setLayout(new GridLayout(1,1,0,0));
-		rightPanel.add(scriptPanel);
+		contentPane.setLayout(null);
+		graphPanel.setBounds(12,12,480,360);
+		this.add(graphPanel);
+		infoPanel.setBounds(12,378,480,150);
+		this.add(infoPanel);
+		scriptPanel.setBounds(500,12,250,456);
+		this.add(scriptPanel);
+		btnStart.setBounds(500,474,250,23);
+		this.add(btnStart);
 
-		infoPanel.jb.addActionListener(new GloblePanelActions());
-
-		setSize(960,800);
+		// 添加事件监听
+		btnStart.addActionListener(new GloblePanelActions());
+		
+		setSize(770,570);
 		setTitle("JScriptReader");
 		setLocation(200,150);
 		setVisible(true);
@@ -77,14 +76,24 @@ public class FormMain extends JFrame
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			if((JButton)e.getSource() == infoPanel.jb)
+			if((JButton)e.getSource() == btnStart)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
-				
+				graphPanel.setBg("\\DATA\\SCENE\\0000.jpg");
 			}
 		} 
-	
 	}
+	
+	void initResource()
+	{
+		//载入脚本上的一切
+	}
+	
+	void mainLoop()
+	{
+		//游戏主循环
+	}
+	
+	
 		
 
 }

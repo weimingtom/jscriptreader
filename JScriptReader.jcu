@@ -19,26 +19,12 @@
 			</folderitem>
 		</project>
 	</projects>
-	<open_files>
-		<docitem>
-			<path>Service\MyEnum.java</path>
-			<source>true</source>
-			<index>0</index>
-			<active>false</active>
-		</docitem>
-		<docitem>
-			<path>Service\AvgsReader.java</path>
-			<source>true</source>
-			<index>1</index>
-			<active>true</active>
-		</docitem>
-	</open_files>
 	<breakpoints>
 		<breakpoint>
 			<path>UI\FormMain.java</path>
 			<class>UI</class>
 			<session/>
-			<line>52</line>
+			<line>84</line>
 			<enable>true</enable>
 		</breakpoint>
 	</breakpoints>

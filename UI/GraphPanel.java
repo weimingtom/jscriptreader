@@ -42,8 +42,8 @@ class GraphPanel extends JPanel
 	
 	// 公有属性
 	public String CurrentDir = System.getProperty("user.dir",".");
-	public String ResPathBg = CurrentDir + "\\test.jpg";
-	public String ResPathCt = CurrentDir + "\\test.png";
+	public String ResPathBg = CurrentDir + "\\DATA\\IMG\\background.jpg";
+	public String ResPathCt = CurrentDir + "\\DATA\\IMG\\actor.png";
 	public String ResPathFm = CurrentDir + "\\DATA\\IMG\\frame.png";
 	
 	public GraphPanel()
@@ -70,5 +70,21 @@ class GraphPanel extends JPanel
       	g.setColor(Color.black);
       	g.drawString("试试看能不能打字\n能不能换行", 170, 250);
       	g.drawString("试试看能不能打字\n能不能换行", 170, 270);
-  	}   
+  	}
+  	
+  	public void setBg(String path) 
+  	{
+  		ResPathBg = CurrentDir + path;
+        iconBg = new ImageIcon(ResPathBg);
+  		this.repaint();
+  	}
+  	
+  	public void setCt(String path) 
+  	{
+  		ResPathCt = CurrentDir + path;
+        iconCt = new ImageIcon(ResPathCt);
+        this.repaint();
+  	}
+  	
+ 	
 }

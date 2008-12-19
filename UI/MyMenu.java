@@ -28,53 +28,72 @@ import javax.swing.table.*;
 
 
  
-class MyMenu extends JMenuBar implements ActionListener
+class MyMenu extends JMenuBar
 {
 	// 声明控件
 	JMenu fileMenu;
+	JMenu ctrlMenu;
 	JMenu helpMenu;
 	JMenuItem reloadMenuItem;
 	JMenuItem closeMenuItem;
 	JMenuItem exitMenuItem;
+	JMenuItem editMenuItem;
 	JMenuItem aboutMenuItem;
 	
 	public MyMenu()
 	{
 		// 实例化事件
 		fileMenu = new JMenu("文件");
+		ctrlMenu = new JMenu("脚本");
 		helpMenu = new JMenu("帮助");
-		reloadMenuItem = new JMenuItem("重载脚本",KeyEvent.VK_E);
-		closeMenuItem = new JMenuItem("关闭脚本",KeyEvent.VK_A);			
-		exitMenuItem = new JMenuItem("退出",KeyEvent.VK_E);
-		aboutMenuItem = new JMenuItem("关于...",KeyEvent.VK_A);			
+		reloadMenuItem = new JMenuItem("重载脚本");
+		closeMenuItem = new JMenuItem("关闭脚本");			
+		exitMenuItem = new JMenuItem("退出");
+		editMenuItem = new JMenuItem("编辑脚本");
+		aboutMenuItem = new JMenuItem("关于...");			
+									
+		reloadMenuItem.addActionListener(new MyMenuActionListener());
+		closeMenuItem.addActionListener(new MyMenuActionListener());
+		exitMenuItem.addActionListener(new MyMenuActionListener());
+		editMenuItem.addActionListener(new MyMenuActionListener());
+		aboutMenuItem.addActionListener(new MyMenuActionListener());
 											
 		fileMenu.add(reloadMenuItem);
 		fileMenu.add(closeMenuItem);
 		fileMenu.addSeparator();
 		fileMenu.add(exitMenuItem);
+		ctrlMenu.add(editMenuItem);
 		helpMenu.add(aboutMenuItem);
 		this.add(fileMenu);	
+		this.add(ctrlMenu);	
 		this.add(helpMenu);
 	}
 	
-	public void actionPerformed(ActionEvent e)
+	class MyMenuActionListener implements ActionListener
 	{
-		if((JMenuItem)e.getSource() == reloadMenuItem)
+		public void actionPerformed(ActionEvent e) 
 		{
-			JOptionPane.showConfirmDialog(null,"Pressed Reload","title",JOptionPane.YES_OPTION);
-		}
-		if((JMenuItem)e.getSource() == closeMenuItem)
-		{
-			JOptionPane.showConfirmDialog(null,"Pressed Close","title",JOptionPane.YES_OPTION);
-		}
-		if((JMenuItem)e.getSource() == aboutMenuItem)
-		{
-			JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
-		}
-		if((JMenuItem)e.getSource() == exitMenuItem)
-		{
-			//dispose();
-			System.exit(0);
-		}
-	} 
+			if((JMenuItem)e.getSource() == reloadMenuItem)
+			{
+				JOptionPane.showConfirmDialog(null,"Pressed Reload","title",JOptionPane.YES_OPTION);
+			}
+			if((JMenuItem)e.getSource() == closeMenuItem)
+			{
+				JOptionPane.showConfirmDialog(null,"Pressed Close","title",JOptionPane.YES_OPTION);
+			}
+			if((JMenuItem)e.getSource() == aboutMenuItem)
+			{
+				JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
+			}
+			if((JMenuItem)e.getSource() == editMenuItem)
+			{
+				JOptionPane.showConfirmDialog(null,"Pressed Edit","title",JOptionPane.YES_OPTION);
+			}
+			if((JMenuItem)e.getSource() == exitMenuItem)
+			{
+				//dispose();
+				System.exit(0);
+			}
+		} 
+	}
 }

@@ -83,6 +83,10 @@
 				<folder>Service</folder>
 			</fileitem>
 			<fileitem>
+				<path>Service\EngineSrv.java</path>
+				<folder>Service</folder>
+			</fileitem>
+			<fileitem>
 				<path>Service\MyEnum.java</path>
 				<folder>Service</folder>
 			</fileitem>

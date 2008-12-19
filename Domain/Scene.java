@@ -1,5 +1,5 @@
 /**
- * @(#)Actor.java
+ * @(#)Scene.java
  *
  *
  * @author Arthur 

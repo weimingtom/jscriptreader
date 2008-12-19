@@ -48,13 +48,13 @@ public class Actor
 		_Path = Path; 
 	}
 
-	private LinkedList _FaceList = new LinkedList();
+	private LinkedList<Face> _FaceList = new LinkedList<Face>();
 	/// 角色表情集合
-	public LinkedList getFaceList() 
+	public LinkedList<Face> getFaceList() 
 	{ 
 		return _FaceList; 
 	}
-	public void setPath(LinkedList FaceList)
+	public void setFaceList(LinkedList<Face> FaceList)
 	{ 
 		_FaceList = FaceList; 
 	}

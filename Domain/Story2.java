@@ -1,5 +1,5 @@
 /**
- * @(#)Actor.java
+ * @(#)Story2.java
  *
  *
  * @author Arthur 
@@ -10,17 +10,18 @@
  */
 
 package Domain;
+
 import java.util.*;
 
 public class Story2
 {
-	private LinkedList _Content = new LinkedList();
+	private LinkedList<Line> _Content = new LinkedList<Line>();
 	/// 全部脚本信息
-	public LinkedList getContent() 
+	public LinkedList<Line> getContent() 
 	{ 
 		return _Content; 
 	}
-	public void setContent(LinkedList Content)
+	public void setContent(LinkedList<Line> Content)
 	{ 
 		_Content = Content; 
 	}
@@ -39,7 +40,8 @@ public class Story2
 	/// 根据索引获得语句
 	public String GetTextByIndex (long index)
 	{
-		String tempString = (String)_Content.get((int)index);
+		Line tempLine = (Line)_Content.get((int)index);
+		String tempString = tempLine.getText();
 		return null;
 	}
 }

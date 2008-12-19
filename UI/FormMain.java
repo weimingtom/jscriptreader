@@ -14,6 +14,9 @@
  
 package UI;
 
+import Domain.*;
+import Service.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -27,6 +30,8 @@ import javax.swing.table.*;
 
 public class FormMain extends JFrame
 {
+	//ActionListener GloblePanelActions;
+
 	// 声明控件
 	MyMenu myMenu;// 我的菜单栏
 	JPanel leftPanel;// 左侧面板
@@ -34,10 +39,10 @@ public class FormMain extends JFrame
 	GraphPanel graphPanel;// 图形面板
 	ScriptPanel scriptPanel;// 脚本面板
 	InfoPanel infoPanel;// 信息面板
-    
+	
 	public FormMain()
 	{
-	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 初始化所有模块
 		myMenu = new MyMenu();
@@ -60,12 +65,31 @@ public class FormMain extends JFrame
 		rightPanel.setLayout(new GridLayout(1,1,0,0));
 		rightPanel.add(scriptPanel);
 
+		infoPanel.jb.addActionListener(new GloblePanelActions());
+
 		setSize(960,800);
 		setTitle("JScriptReader");
 		setLocation(200,150);
 		setVisible(true);
 	}
+	
+    class GloblePanelActions implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+			if((JButton)e.getSource() == infoPanel.jb)
+			{
+				JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
+				
+			}
+		} 
+	
+	}
+		
+
 }
+
+
 
 
 

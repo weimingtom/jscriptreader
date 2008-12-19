@@ -1,36 +1,51 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using ScriptReader.Domain;
+/**
+ * @(#)StoryReader2.java
+ *
+ *
+ * @author Arthur 
+ * @version 1.00 2008/12/19
+ *
+ * 服务 —— 脚本读取
+ *
+ */
+ 
+package Service;
 
-namespace ScriptReader.Service
+import Domain.*;
+import java.io.*;
+import java.util.*;
+
+public class StoryReader2
 {
-    public class StoryReader2
+	public String CurrentDir = System.getProperty("user.dir",".");
+
+    /// 获得全部的故事
+    /// 返回故事对象
+    public Story2 GetWholeStory()
     {
-        private string currentDir = AppDomain.CurrentDomain.BaseDirectory;
-
-        /// <summary>
-        /// 获得全部的故事
-        /// </summary>
-        /// <returns>返回故事对象</returns>
-        public Story2 GetWholeStory()
-        {
-            Story2 story = new Story2();
-            StreamReader SR = new StreamReader(currentDir + @"DATA\AVGS\story.avgs", Encoding.GetEncoding("GB2312"));
-            string tempStr;
-            int index = 1;
-            while ((tempStr = SR.ReadLine()) != null)
-            {
-                Line newLine = new Line();
-                newLine.index = index;
-                newLine.text = tempStr;
-                story.content.Add(newLine);
-                index++;
-            }
-            story.LineNumber = index - 1;
-            return story;
-        }
-
+  	    Story2 story = new Story2();
+  		try
+    	{
+			FileReader reader = new FileReader(CurrentDir + "\\DATA\\AVGS\\story.avgs");
+		    BufferedReader br = new BufferedReader(reader);
+	        String tempStr;
+	        int index = 1;
+	        while ((tempStr = br.readLine()) != null)
+	        {
+	            Line newLine = new Line();
+	            newLine.setIndex(index);
+	            newLine.setText(tempStr);
+	            story.getContent().add(newLine);
+	            index++;
+	        }
+	        story.setLineNumber(index - 1);
+    	}
+    	catch (Exception ex)
+    	{
+    		return null;
+    	}
+        return story;
     }
+
 }
+

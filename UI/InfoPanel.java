@@ -14,6 +14,9 @@
  
 package UI;
 
+import Domain.*;
+import Service.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

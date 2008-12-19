@@ -14,6 +14,9 @@
  
 package UI;
 
+import Domain.*;
+import Service.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -25,11 +28,9 @@ import javax.swing.table.*;
 
 
  
-class MyMenu extends JMenuBar
+class MyMenu extends JMenuBar implements ActionListener
 {
-	// 1、声明事件、控件
-	ActionListener MyMenuActions;
-	
+	// 声明控件
 	JMenu fileMenu;
 	JMenu helpMenu;
 	JMenuItem reloadMenuItem;
@@ -37,10 +38,9 @@ class MyMenu extends JMenuBar
 	JMenuItem exitMenuItem;
 	JMenuItem aboutMenuItem;
 	
-	
 	public MyMenu()
 	{
-		// 2、实例化事件
+		// 实例化事件
 		fileMenu = new JMenu("文件");
 		helpMenu = new JMenu("帮助");
 		reloadMenuItem = new JMenuItem("重载脚本",KeyEvent.VK_E);
@@ -55,39 +55,26 @@ class MyMenu extends JMenuBar
 		helpMenu.add(aboutMenuItem);
 		this.add(fileMenu);	
 		this.add(helpMenu);
-	
-
-	
-		// 3、实例化事件
-		MyMenuActions = new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				if((JMenuItem)e.getSource() == reloadMenuItem)
-				{
-					JOptionPane.showConfirmDialog(null,"Pressed Reload","title",JOptionPane.YES_OPTION);
-				}
-				if((JMenuItem)e.getSource() == closeMenuItem)
-				{
-					JOptionPane.showConfirmDialog(null,"Pressed Close","title",JOptionPane.YES_OPTION);
-				}
-				if((JMenuItem)e.getSource() == aboutMenuItem)
-				{
-					JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
-				}
-				if((JMenuItem)e.getSource() == exitMenuItem)
-				{
-					//dispose();
-					System.exit(0);
-				}
-			} 
-		};
-		
-		// 4、添加控件的事件监听
-		reloadMenuItem.addActionListener(MyMenuActions);
-		closeMenuItem.addActionListener(MyMenuActions);
-		aboutMenuItem.addActionListener(MyMenuActions);
-		exitMenuItem.addActionListener(MyMenuActions);
-		
 	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		if((JMenuItem)e.getSource() == reloadMenuItem)
+		{
+			JOptionPane.showConfirmDialog(null,"Pressed Reload","title",JOptionPane.YES_OPTION);
+		}
+		if((JMenuItem)e.getSource() == closeMenuItem)
+		{
+			JOptionPane.showConfirmDialog(null,"Pressed Close","title",JOptionPane.YES_OPTION);
+		}
+		if((JMenuItem)e.getSource() == aboutMenuItem)
+		{
+			JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
+		}
+		if((JMenuItem)e.getSource() == exitMenuItem)
+		{
+			//dispose();
+			System.exit(0);
+		}
+	} 
 }

@@ -21,16 +21,35 @@
 	</projects>
 	<breakpoints>
 		<breakpoint>
+			<path>UI\MyMenu.java</path>
+			<class>UI</class>
+			<session/>
+			<line>105</line>
+			<enable>true</enable>
+		</breakpoint>
+		<breakpoint>
 			<path>UI\FormMain.java</path>
 			<class>UI</class>
 			<session/>
-			<line>84</line>
+			<line>194</line>
 			<enable>true</enable>
 		</breakpoint>
 	</breakpoints>
 	<watches>
 		<watch>
-			<expression>imageLabel</expression>
+			<expression>story</expression>
+		</watch>
+		<watch>
+			<expression>bCmd</expression>
+		</watch>
+		<watch>
+			<expression>detailCMD</expression>
+		</watch>
+		<watch>
+			<expression>id</expression>
+		</watch>
+		<watch>
+			<expression>tempStr</expression>
 		</watch>
 	</watches>
 </workspace_user>

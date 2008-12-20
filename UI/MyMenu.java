@@ -30,6 +30,8 @@ import javax.swing.table.*;
  
 class MyMenu extends JMenuBar
 {
+	FormMain myParent;
+	
 	// 声明控件
 	JMenu fileMenu;
 	JMenu ctrlMenu;
@@ -40,8 +42,9 @@ class MyMenu extends JMenuBar
 	JMenuItem editMenuItem;
 	JMenuItem aboutMenuItem;
 	
-	public MyMenu()
+	public MyMenu(FormMain parent)
 	{
+		myParent = parent;
 		// 实例化事件
 		fileMenu = new JMenu("文件");
 		ctrlMenu = new JMenu("脚本");
@@ -75,19 +78,31 @@ class MyMenu extends JMenuBar
 		{
 			if((JMenuItem)e.getSource() == reloadMenuItem)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed Reload","title",JOptionPane.YES_OPTION);
+				myParent.scriptPanel.PrintScript();
 			}
 			if((JMenuItem)e.getSource() == closeMenuItem)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed Close","title",JOptionPane.YES_OPTION);
+				myParent.scriptPanel.scriptText.setText("");
 			}
 			if((JMenuItem)e.getSource() == aboutMenuItem)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed About","title",JOptionPane.YES_OPTION);
+				String aboutStr = 	
+					"JScriptReader\n\n" + 
+					"Produced by 王徐阳\n\n" +
+					"本程序是基于AVGmaker中调试工具ScriptReader改写的，\n" +
+					"原版本已修正到1.5版，并完善了诸多功能。\n" +
+					"本程序在其基础上对界面、功能都有一定的修改、简化，\n" +
+					"但足以达到多平台调试脚本的作用。\n\n" +
+					"本程序已经开源，欢迎使用者访问、交流：\n" +
+					"http://code.google.com/p/jscriptreader/\n" +
+					"同时，dotnet版AVGreader也已经开源，\n" + 
+					"http://code.google.com/p/avgreader/\n" +
+					"也欢迎关注我的其他开源项目。";
+				JOptionPane.showConfirmDialog(null,aboutStr,"关于 JScriptReader",JOptionPane.CLOSED_OPTION);
 			}
 			if((JMenuItem)e.getSource() == editMenuItem)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed Edit","title",JOptionPane.YES_OPTION);
+				JOptionPane.showConfirmDialog(null,"Pressed Edit\nThis function is till not available!","Sorry!!",JOptionPane.CLOSED_OPTION);
 			}
 			if((JMenuItem)e.getSource() == exitMenuItem)
 			{

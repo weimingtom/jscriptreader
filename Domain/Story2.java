@@ -40,9 +40,9 @@ public class Story2
 	/// 根据索引获得语句
 	public String GetTextByIndex (long index)
 	{
-		Line tempLine = (Line)_Content.get((int)index);
+		Line tempLine = (Line)_Content.get((int)(index-1));
 		String tempString = tempLine.getText();
-		return null;
+		return tempString;
 	}
 }
 

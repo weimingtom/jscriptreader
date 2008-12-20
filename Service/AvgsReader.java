@@ -25,15 +25,15 @@ public class AvgsReader
         LinkedList<Scene> sceneList = new LinkedList<Scene>();
         try
         {
-			FileReader reader = new FileReader(CurrentDir + "\\DATA\\AVGS\\story.avgs");
+			FileReader reader = new FileReader(CurrentDir + "\\DATA\\AVGS\\scene.avgs");
 		    BufferedReader br = new BufferedReader(reader);
 	        String tempStr = br.readLine();
-	        if (tempStr != "<File SCENE>")
+	        if (!(tempStr.equals("<File SCENE>")))
 	            return null;
 	        while((tempStr = br.readLine()) != null)
 	        {
 	            Scene scene = new Scene();
-	            byte[] tBytes = tempStr.getBytes();
+	            char[] tBytes = tempStr.toCharArray();
 	            //[场景名称][场景称号]
 	            String name = "";
 	            String id = "";
@@ -43,7 +43,7 @@ public class AvgsReader
 	                name += tBytes[i];
 	            for (i+=2; tBytes[i] != ']'; i++)
 	                id += tBytes[i];
-	            path = CurrentDir + "\\DATA\\SCENE\\" + id + ".bmp";
+	            path = CurrentDir + "\\DATA\\SCENE\\" + id + ".jpg";
 	
 	            scene.setName(name);
 	            scene.setID(id);
@@ -71,12 +71,12 @@ public class AvgsReader
 			FileReader reader = new FileReader(dir);
 		    BufferedReader br = new BufferedReader(reader);
 	        String tempStr = br.readLine();
-	        if (tempStr != "<File FACE "+ActorID+">")
+	        if (!(tempStr.equals("<File FACE "+ActorID+">")))
 	            return null;
 	        while ((tempStr = br.readLine()) != null)
 	        {
 	            Face face = new Face();
-	            byte[] tBytes = tempStr.getBytes();
+	            char[] tBytes = tempStr.toCharArray();
 	            //[表情名称][表情编号]
 	            String name = "";
 	            String id = "";
@@ -110,12 +110,12 @@ public class AvgsReader
 			FileReader reader = new FileReader(CurrentDir + "\\DATA\\AVGS\\actor.avgs");
 		    BufferedReader br = new BufferedReader(reader);
 	        String tempStr = br.readLine();
-	        if (tempStr != "<File ACTOR>")
+	        if (!(tempStr.equals("<File ACTOR>")))
 	            return null;
 	        while ((tempStr = br.readLine()) != null)
 	        {
 	            Actor actor = new Actor();
-	            byte[] tBytes = tempStr.getBytes();
+	            char[] tBytes = tempStr.toCharArray();
 	            //[人物名字][人物编号]
 	            String name = "";
 	            String id = "";
@@ -150,7 +150,7 @@ public class AvgsReader
 		{
 	       	Scene scene = (Scene)iter.next();
        		String tempID = scene.getID();
-       		if(tempID == ID)
+       		if(tempID.equals(ID))
        			return scene;
 	    }
         return null;
@@ -164,9 +164,11 @@ public class AvgsReader
        	{
        		Actor actor = (Actor)iter.next();
        		String tempID = actor.getID();
-       		if(tempID == ID)
+       		if(tempID.equals(ID))
        			return actor;
        	}
         return null;
     }
+    
+    
 }

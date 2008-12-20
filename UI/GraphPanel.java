@@ -45,6 +45,8 @@ class GraphPanel extends JPanel
 	public String ResPathBg = CurrentDir + "\\DATA\\IMG\\background.jpg";
 	public String ResPathCt = CurrentDir + "\\DATA\\IMG\\actor.png";
 	public String ResPathFm = CurrentDir + "\\DATA\\IMG\\frame.png";
+	public String Sentense1 = "程序初始化完毕！";
+	public String Sentense2 = "按开始执行运行脚本！";
 	
 	public GraphPanel()
 	{
@@ -68,23 +70,34 @@ class GraphPanel extends JPanel
       	g.drawImage(imageFm, 105, 180, 375, 180, null);
       	g.setFont(new Font("黑体",Font.PLAIN,16));
       	g.setColor(Color.black);
-      	g.drawString("试试看能不能打字\n能不能换行", 170, 250);
-      	g.drawString("试试看能不能打字\n能不能换行", 170, 270);
+      	g.drawString(Sentense1, 170, 250);
+      	g.drawString(Sentense2, 170, 270);
   	}
   	
   	public void setBg(String path) 
   	{
-  		ResPathBg = CurrentDir + path;
+  		ResPathBg = path;
         iconBg = new ImageIcon(ResPathBg);
   		this.repaint();
   	}
   	
   	public void setCt(String path) 
   	{
-  		ResPathCt = CurrentDir + path;
+  		ResPathCt = path;
         iconCt = new ImageIcon(ResPathCt);
         this.repaint();
   	}
   	
- 	
+  	public void SetSent1(String sen)
+  	{
+  		Sentense1 = sen;
+  		this.repaint();
+  	}
+  	
+  	public void SetSent2(String sen)
+  	{
+  		Sentense2 = sen;
+  		this.repaint();
+  	}
+  	
 }

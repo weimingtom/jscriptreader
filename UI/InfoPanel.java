@@ -38,7 +38,7 @@ class InfoPanel extends JPanel
 	JLabel labelWd;
 	JTextField txtCt;
 	JTextField txtBg;
-	JTextField txtWd;
+	JTextArea txtWd;
 	
 	public InfoPanel()
 	{
@@ -50,7 +50,7 @@ class InfoPanel extends JPanel
 		labelWd = new JLabel("当前语言：");
 		txtCt = new JTextField();
 		txtBg = new JTextField();
-		txtWd = new JTextField();
+		txtWd = new JTextArea();
 		
 		// 添加控件
 		labelCt.setBounds(20,6,65,12);

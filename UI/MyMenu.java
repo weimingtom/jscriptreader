@@ -38,8 +38,10 @@ class MyMenu extends JMenuBar
 	JMenu helpMenu;
 	JMenuItem reloadMenuItem;
 	JMenuItem closeMenuItem;
-	JMenuItem exitMenuItem;
 	JMenuItem editMenuItem;
+	JMenuItem exitMenuItem;
+	JMenuItem colorMenuItem;
+	JMenuItem fontMenuItem;
 	JMenuItem aboutMenuItem;
 	
 	public MyMenu(FormMain parent)
@@ -47,25 +49,33 @@ class MyMenu extends JMenuBar
 		myParent = parent;
 		// 实例化事件
 		fileMenu = new JMenu("文件");
-		ctrlMenu = new JMenu("脚本");
+		ctrlMenu = new JMenu("设置");
 		helpMenu = new JMenu("帮助");
 		reloadMenuItem = new JMenuItem("重载脚本");
 		closeMenuItem = new JMenuItem("关闭脚本");			
-		exitMenuItem = new JMenuItem("退出");
 		editMenuItem = new JMenuItem("编辑脚本");
+		exitMenuItem = new JMenuItem("退出");
+		colorMenuItem = new JMenuItem("设置文字颜色");
+		fontMenuItem = new JMenuItem("设置文字字体");
 		aboutMenuItem = new JMenuItem("关于...");			
 									
 		reloadMenuItem.addActionListener(new MyMenuActionListener());
 		closeMenuItem.addActionListener(new MyMenuActionListener());
 		exitMenuItem.addActionListener(new MyMenuActionListener());
 		editMenuItem.addActionListener(new MyMenuActionListener());
+		colorMenuItem.addActionListener(new MyMenuActionListener());
+		fontMenuItem.addActionListener(new MyMenuActionListener());
 		aboutMenuItem.addActionListener(new MyMenuActionListener());
 											
 		fileMenu.add(reloadMenuItem);
 		fileMenu.add(closeMenuItem);
 		fileMenu.addSeparator();
+		fileMenu.add(editMenuItem);
+		fileMenu.addSeparator();
 		fileMenu.add(exitMenuItem);
-		ctrlMenu.add(editMenuItem);
+		ctrlMenu.add(colorMenuItem);
+		ctrlMenu.add(fontMenuItem);
+		//ctrlMenu.addSeparator();
 		helpMenu.add(aboutMenuItem);
 		this.add(fileMenu);	
 		this.add(ctrlMenu);	
@@ -78,37 +88,55 @@ class MyMenu extends JMenuBar
 		{
 			if((JMenuItem)e.getSource() == reloadMenuItem)
 			{
+				myParent.scriptPanel.clearScript();
 				myParent.scriptPanel.PrintScript();
 			}
 			if((JMenuItem)e.getSource() == closeMenuItem)
 			{
 				myParent.scriptPanel.scriptText.setText("");
 			}
-			if((JMenuItem)e.getSource() == aboutMenuItem)
-			{
-				String aboutStr = 	
-					"JScriptReader\n\n" + 
-					"Produced by 王徐阳\n\n" +
-					"本程序是基于AVGmaker中调试工具ScriptReader改写的，\n" +
-					"原版本已修正到1.5版，并完善了诸多功能。\n" +
-					"本程序在其基础上对界面、功能都有一定的修改、简化，\n" +
-					"但足以达到多平台调试脚本的作用。\n\n" +
-					"本程序已经开源，欢迎使用者访问、交流：\n" +
-					"http://code.google.com/p/jscriptreader/\n" +
-					"同时，dotnet版AVGreader也已经开源，\n" + 
-					"http://code.google.com/p/avgreader/\n" +
-					"也欢迎关注我的其他开源项目。";
-				JOptionPane.showConfirmDialog(null,aboutStr,"关于 JScriptReader",JOptionPane.CLOSED_OPTION);
-			}
 			if((JMenuItem)e.getSource() == editMenuItem)
 			{
-				JOptionPane.showConfirmDialog(null,"Pressed Edit\nThis function is till not available!","Sorry!!",JOptionPane.CLOSED_OPTION);
+				FormEditScript frmES = new FormEditScript();
+				frmES.setVisible(true);
+			}
+			if((JMenuItem)e.getSource() == aboutMenuItem)
+			{
+				FormAbout frmAbout = new FormAbout();
+				frmAbout.setVisible(true);
+			}
+			if((JMenuItem)e.getSource() == colorMenuItem)
+			{
+				setGrapicTextColor();
+			}
+			if((JMenuItem)e.getSource() == fontMenuItem)
+			{
+				setGraphicTextFont();
 			}
 			if((JMenuItem)e.getSource() == exitMenuItem)
 			{
-				//dispose();
 				System.exit(0);
 			}
 		} 
+	}
+	
+	private void MessageBox(String text, String title)
+	{
+		JOptionPane.showConfirmDialog(null,text,title,JOptionPane.CLOSED_OPTION);
+	}
+	
+	private void setGrapicTextColor()
+	{
+		JColorChooser chooser = new JColorChooser();
+		Color newColor;
+		newColor = chooser.showDialog(null, "设置文字颜色", myParent.graphPanel.getColor());
+		myParent.graphPanel.setColor(newColor);
+	}
+	
+	private void setGraphicTextFont()
+	{
+		Font font = myParent.graphPanel.getFont();   
+		font = NwFontChooserS.showDialog(null,"设置文字字体",font);
+		myParent.graphPanel.setFont(font);
 	}
 }

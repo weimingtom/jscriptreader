@@ -48,12 +48,26 @@ class ScriptPanel extends JPanel
 		scrollPane = new JScrollPane(scriptText);
 		scriptText.setLineWrap(true);
 		scriptText.setEditable(false);
-
 		
 		this.add(scrollPane, BorderLayout.CENTER);
 		
 		PrintScript();
 	}
+	
+	public ScriptPanel(int status)
+	{
+		this.setLayout(new BorderLayout());
+		
+		scriptText = new JTextArea();
+		scrollPane = new JScrollPane(scriptText);
+		scriptText.setLineWrap(true);
+		
+		this.add(scrollPane, BorderLayout.CENTER);
+		
+		PrintScript();
+		saveScript();
+	}
+
 	
 	public void PrintScript()
 	{
@@ -72,7 +86,27 @@ class ScriptPanel extends JPanel
 		catch (Exception ex)
 		{		}
 	}
+	
+	public void clearScript()
+	{
+		scriptText.setText(" ");
+	}
+	
+	public void saveScript()
+	{
+		try
+		{
+		    FileWriter writer = new FileWriter(CurrentDir + "\\DATA\\AVGS\\story.avgs");
+			PrintWriter out = new PrintWriter(writer); 
+		    String s1 = scriptText.getText();
+		    out.print(s1);
+		    writer.close();
+		}
+		catch (Exception ex)
+		{		}
+	}
 		
+	/*
 	public void ReadScript()
 	{
 		try
@@ -90,4 +124,5 @@ class ScriptPanel extends JPanel
 		catch (Exception ex)
 		{}
 	}
+	*/
 }

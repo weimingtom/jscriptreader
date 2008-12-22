@@ -39,6 +39,7 @@ class InfoPanel extends JPanel
 	JTextField txtCt;
 	JTextField txtBg;
 	JTextArea txtWd;
+	JScrollPane scrollPane;
 	
 	public InfoPanel()
 	{
@@ -51,6 +52,7 @@ class InfoPanel extends JPanel
 		txtCt = new JTextField();
 		txtBg = new JTextField();
 		txtWd = new JTextArea();
+		scrollPane = new JScrollPane(txtWd);
 		
 		// Ìí¼Ó¿Ø¼þ
 		labelCt.setBounds(20,6,65,12);
@@ -63,8 +65,8 @@ class InfoPanel extends JPanel
 		add(txtBg);
 		labelWd.setBounds(20,60,65,12);
 		add(labelWd);
-		txtWd.setBounds(91,57,363,62);
-		add(txtWd);
+		scrollPane.setBounds(91,57,363,62);
+		add(scrollPane);
 
 	}
 	

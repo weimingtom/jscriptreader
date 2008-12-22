@@ -47,6 +47,8 @@ class GraphPanel extends JPanel
 	public String ResPathFm = CurrentDir + "\\DATA\\IMG\\frame.png";
 	public String Sentense1 = "程序初始化完毕！";
 	public String Sentense2 = "按开始执行运行脚本！";
+	public Color textColor = Color.black;
+	public Font textFont = new Font("黑体",Font.PLAIN,16);
 	
 	public GraphPanel()
 	{
@@ -68,8 +70,8 @@ class GraphPanel extends JPanel
       	g.drawImage(imageBg, 0, 0, 480, 360, null);   
       	g.drawImage(imageCt, 0, 0, 210, 360, null);   
       	g.drawImage(imageFm, 105, 180, 375, 180, null);
-      	g.setFont(new Font("黑体",Font.PLAIN,16));
-      	g.setColor(Color.black);
+      	g.setFont(textFont);
+      	g.setColor(textColor);
       	g.drawString(Sentense1, 170, 250);
       	g.drawString(Sentense2, 170, 270);
   	}
@@ -88,16 +90,34 @@ class GraphPanel extends JPanel
         this.repaint();
   	}
   	
-  	public void SetSent1(String sen)
+  	public void setSent1(String sen)
   	{
   		Sentense1 = sen;
   		this.repaint();
   	}
   	
-  	public void SetSent2(String sen)
+  	public void setSent2(String sen)
   	{
   		Sentense2 = sen;
   		this.repaint();
   	}
+  	
+  	public void setColor(Color fromColor)
+  	{
+  		textColor = fromColor;
+  		this.repaint();
+  	}
+  	
+  	public Color getColor()
+  	{
+  		return textColor;
+  	}
+  	
+  	public void setFont(Font fromFont)
+  	{
+  		textFont = fromFont;
+  		this.repaint();
+  	}
+
   	
 }

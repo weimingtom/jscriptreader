@@ -39,6 +39,14 @@
 				<path>Program.java</path>
 			</fileitem>
 			<fileitem>
+				<path>UI\FormAbout.java</path>
+				<folder>UI</folder>
+			</fileitem>
+			<fileitem>
+				<path>UI\FormEditScript.java</path>
+				<folder>UI</folder>
+			</fileitem>
+			<fileitem>
 				<path>UI\FormMain.java</path>
 				<folder>UI</folder>
 			</fileitem>
@@ -52,6 +60,10 @@
 			</fileitem>
 			<fileitem>
 				<path>UI\MyMenu.java</path>
+				<folder>UI</folder>
+			</fileitem>
+			<fileitem>
+				<path>UI\NwFontChooserS.java</path>
 				<folder>UI</folder>
 			</fileitem>
 			<fileitem>

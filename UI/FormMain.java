@@ -67,8 +67,8 @@ public class FormMain extends JFrame
 				String CurrentDir = System.getProperty("user.dir",".");
 				graphPanel.setBg(CurrentDir + "\\DATA\\IMG\\background.jpg");
 				graphPanel.setCt(CurrentDir + "\\DATA\\IMG\\actor.png");
-				graphPanel.SetSent1("程序初始化完毕！");
-				graphPanel.SetSent2("按开始执行运行脚本！");
+				graphPanel.setSent1("程序初始化完毕！");
+				graphPanel.setSent2("按开始执行运行脚本！");
 			}
 		} 
 	}
@@ -215,14 +215,14 @@ public class FormMain extends JFrame
     	{
         	case 1 : 
         	{
-        		graphPanel.SetSent1(sen);
-        		graphPanel.SetSent2("");
+        		graphPanel.setSent1(sen);
+        		graphPanel.setSent2("");
         		infoPanel.txtWd.setText(sen); // 窗体：显示当前语句1
         		break;
         	}
         	case 2 :
         	{
-        		graphPanel.SetSent2(sen);
+        		graphPanel.setSent2(sen);
         		infoPanel.txtWd.setText(infoPanel.txtWd.getText() + "\n" + sen); // 窗体：显示当前语句1
         		break;
         	}
@@ -265,8 +265,8 @@ public class FormMain extends JFrame
         catch(InterruptedException ex){};
         */
         infoPanel.txtWd.setText("");  // 窗体：换页清空控件
-		graphPanel.SetSent1("");
-		graphPanel.SetSent2("");
+		graphPanel.setSent1("");
+		graphPanel.setSent2("");
         sentFlag = 1;
     }
 

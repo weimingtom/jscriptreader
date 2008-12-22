@@ -19,14 +19,15 @@
 			</folderitem>
 		</project>
 	</projects>
-	<breakpoints>
-		<breakpoint>
+	<open_files>
+		<docitem>
 			<path>UI\MyMenu.java</path>
-			<class>UI</class>
-			<session/>
-			<line>105</line>
-			<enable>true</enable>
-		</breakpoint>
+			<source>true</source>
+			<index>0</index>
+			<active>true</active>
+		</docitem>
+	</open_files>
+	<breakpoints>
 		<breakpoint>
 			<path>UI\FormMain.java</path>
 			<class>UI</class>

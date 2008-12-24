@@ -4,7 +4,7 @@
  *
  * @author Noah w 
  * @modified by Arthur
- * @version 1.00 2008/12/17
+ * @version 1.00 2008/12/22
  *
  * 字体选择 对话框
  * 
@@ -32,7 +32,7 @@ public class NwFontChooserS extends JDialog
 	NwList StyleList; 
 	NwList FontList ; 
 	NwList SizeList ; 
-	static JLabel Sample = new JLabel(); 
+	static JTextField Sample = new JTextField(); 
 	boolean ob = false; 
 	
 	private NwFontChooserS(Frame parent,boolean modal,Font font) 
@@ -60,10 +60,10 @@ public class NwFontChooserS extends JDialog
 	private void initAll() 
 	{ 
 		getContentPane().setLayout(null); 
-		setBounds(50,50,425,400); 
+		setBounds(200,200,428,455); 
 		addLists(); 
 		addButtons(); 
-		Sample.setBounds(10,320,415,25); 
+		Sample.setBounds(10,307,401,80); 
 		Sample.setForeground(Color.black); 
 		getContentPane().add(Sample); 
 		addWindowListener(new WindowAdapter() 
@@ -91,9 +91,9 @@ public class NwFontChooserS extends JDialog
 		ok.setMargin(new Insets(0,0,0,0)); 
 		JButton ca = new JButton("Cancel"); 
 		ca.setMargin(new Insets(0,0,0,0)); 
-		ok.setBounds(260,350,70,20); 
+		ok.setBounds(260,390,70,20); 
 		ok.setFont(new Font(" ",1,11)); 
-		ca.setBounds(340,350,70,20); 
+		ca.setBounds(340,390,70,20); 
 		ca.setFont(new Font(" ",1,12)); 
 		getContentPane().add(ok); 
 		getContentPane().add(ca); 

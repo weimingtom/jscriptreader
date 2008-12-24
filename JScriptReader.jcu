@@ -24,6 +24,12 @@
 			<path>UI\MyMenu.java</path>
 			<source>true</source>
 			<index>0</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>UI\NwFontChooserS.java</path>
+			<source>true</source>
+			<index>1</index>
 			<active>true</active>
 		</docitem>
 	</open_files>
